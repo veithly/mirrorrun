@@ -1,0 +1,100 @@
+{
+  "baseURL": "https://mirrorrun.veithly.workers.dev",
+  "checkedAt": "2026-05-28T07:18:46.262Z",
+  "http": [
+    {
+      "route": "/",
+      "status": 200,
+      "ok": true,
+      "bytes": 18592,
+      "title": "MirrorRun"
+    },
+    {
+      "route": "/app",
+      "status": 200,
+      "ok": true,
+      "bytes": 16154,
+      "title": "MirrorRun"
+    },
+    {
+      "route": "/m/demo-smoke",
+      "status": 200,
+      "ok": true,
+      "bytes": 12166,
+      "title": "MirrorRun"
+    },
+    {
+      "route": "/app/replays",
+      "status": 200,
+      "ok": true,
+      "bytes": 12948,
+      "title": "MirrorRun"
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "ok": true,
+      "bytes": 19445,
+      "title": "MirrorRun"
+    }
+  ],
+  "browser": {
+    "pages": [
+      {
+        "route": "/",
+        "title": "MirrorRun",
+        "containsMirrorRun": true,
+        "containsLaunchCopy": true,
+        "firstLinks": [
+          {
+            "tag": "a",
+            "text": "MirrorRun home",
+            "href": "https://mirrorrun.veithly.workers.dev/"
+          },
+          {
+            "tag": "a",
+            "text": "Launch room",
+            "href": "https://mirrorrun.veithly.workers.dev/app"
+          },
+          {
+            "tag": "a",
+            "text": "Replays",
+            "href": "https://mirrorrun.veithly.workers.dev/app/replays"
+          },
+          {
+            "tag": "a",
+            "text": "Architecture",
+            "href": "https://mirrorrun.veithly.workers.dev/about"
+          },
+          {
+            "tag": "a",
+            "text": "Open launch room",
+            "href": "https://mirrorrun.veithly.workers.dev/app"
+          },
+          {
+            "tag": "a",
+            "text": "Architecture",
+            "href": "https://mirrorrun.veithly.workers.dev/about"
+          },
+          {
+            "tag": "a",
+            "text": "Run the flow",
+            "href": "https://mirrorrun.veithly.workers.dev/app"
+          }
+        ]
+      },
+      {
+        "route": "/app",
+        "title": "MirrorRun",
+        "containsSessionCopy": true,
+        "containsHonestKeyState": true,
+        "clickResult": {
+          "label": "MirrorRun home",
+          "urlAfterClick": "https://mirrorrun.veithly.workers.dev/"
+        }
+      }
+    ],
+    "consoleMessages": []
+  },
+  "passed": true
+}

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MirrorRun Mockups</title>
+  <style>
+    :root {
+      --ink: #141414;
+      --paper: #faf7f1;
+      --panel: #fffaf2;
+      --coral: #e45745;
+      --mint: #2cbf8a;
+      --blue: #315f9f;
+      --line: #2b2520;
+      --muted: #746b62;
+      --amber: #f2b84b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    .screen {
+      width: 100vw;
+      min-height: 100vh;
+      padding: 42px;
+      background:
+        linear-gradient(90deg, rgba(20,20,20,.045) 1px, transparent 1px) 0 0 / 48px 48px,
+        linear-gradient(0deg, rgba(20,20,20,.035) 1px, transparent 1px) 0 0 / 48px 48px,
+        var(--paper);
+    }
+    .mockup { display: none; }
+    body[data-screen="landing"] .landing,
+    body[data-screen="overview"] .overview,
+    body[data-screen="detail"] .detail,
+    body[data-screen="mobile"] .mobile { display: block; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 34px;
+      font-size: 18px;
+    }
+    .brand {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+    .mark {
+      width: 42px;
+      height: 42px;
+      border: 3px solid var(--line);
+      background: linear-gradient(135deg, var(--coral), var(--amber));
+      box-shadow: 5px 5px 0 var(--line);
+      transform: rotate(-3deg);
+    }
+    .pills { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pill {
+      border: 2px solid var(--line);
+      background: white;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 3px 3px 0 rgba(20,20,20,.22);
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .headline {
+      font-size: clamp(64px, 6vw, 110px);
+      line-height: .92;
+      margin: 0 0 24px;
+      font-weight: 950;
+      letter-spacing: 0;
+      max-width: 1000px;
+    }
+    .sub {
+      font-size: 25px;
+      line-height: 1.35;
+      color: #3f3831;
+      max-width: 800px;
+      margin-bottom: 32px;
+    }
+    .button-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      border: 3px solid var(--line);
+      padding: 18px 24px;
+      background: var(--coral);
+      color: white;
+      font-weight: 900;
+      font-size: 18px;
+      box-shadow: 6px 6px 0 var(--line);
+    }
+    .btn.secondary { background: var(--panel); color: var(--ink); }
+    .panel {
+      border: 3px solid var(--line);
+      background: var(--panel);
+      box-shadow: 8px 8px 0 var(--line);
+      border-radius: 8px;
+      padding: 22px;
+    }
+    .mirror {
+      min-height: 520px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      background: #1a1715;
+      color: white;
+    }
+    .photo {
+      border: 2px solid rgba(255,255,255,.35);
+      border-radius: 6px;
+      background:
+        radial-gradient(circle at 52% 30%, #f1c0a2 0 12%, transparent 13%),
+        linear-gradient(140deg, #4f6c9e, #d96c55 58%, #f1b85b);
+      min-height: 330px;
+      position: relative;
+      overflow: hidden;
+    }
+    .photo:after {
+      content: "";
+      position: absolute;
+      inset: 45% 24% 0;
+      background: rgba(255,255,255,.28);
+      border-radius: 48% 48% 0 0;
+    }
+    .label {
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 950;
+      color: var(--muted);
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+    .timeline { display: grid; gap: 12px; }
+    .event {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      border-bottom: 2px solid rgba(20,20,20,.12);
+      padding: 11px 0;
+      font-weight: 800;
+    }
+    .dot { width: 15px; height: 15px; border-radius: 50%; background: var(--mint); border: 2px solid var(--line); }
+    .dot.warn { background: var(--amber); }
+    .dot.fail { background: var(--coral); }
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
+    .stat { border: 2px solid var(--line); background: white; padding: 16px; border-radius: 6px; }
+    .stat strong { display: block; font-size: 32px; }
+    .app-grid { display: grid; grid-template-columns: 1fr 420px; gap: 20px; }
+    .side-stack { display: grid; gap: 18px; }
+    .health { display: grid; gap: 10px; }
+    .bar { height: 16px; border: 2px solid var(--line); background: white; border-radius: 999px; overflow: hidden; }
+    .bar span { display: block; height: 100%; background: var(--mint); }
+    .bar.coral span { background: var(--coral); }
+    .receipt {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: #161616;
+      color: #f9f1df;
+      padding: 18px;
+      border-radius: 6px;
+      min-height: 180px;
+      white-space: pre-wrap;
+    }
+    .phone-wrap {
+      width: calc(100vw - 64px);
+      max-width: 326px;
+      height: calc(100vh - 32px);
+      max-height: 812px;
+      margin: 0 auto;
+      border: 4px solid var(--line);
+      border-radius: 34px;
+      background: var(--panel);
+      box-shadow: 6px 6px 0 var(--line);
+      overflow: hidden;
+      padding: 24px;
+      position: relative;
+    }
+    .phone-hero {
+      height: 300px;
+      border: 3px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(135deg, #e45745, #f2b84b 52%, #2cbf8a);
+      margin: 18px 0;
+      position: relative;
+    }
+    .sticky {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      background: var(--coral);
+      color: white;
+      border: 3px solid var(--line);
+      padding: 16px;
+      text-align: center;
+      font-weight: 950;
+      border-radius: 16px;
+      box-shadow: 5px 5px 0 var(--line);
+    }
+    .mobile .screen { padding: 0; display: flex; align-items: center; justify-content: center; }
+  </style>
+</head>
+<body>
+  <div class="mockup landing screen">
+    <div class="topbar">
+      <div class="brand"><div class="mark"></div><span>MirrorRun</span></div>
+      <div class="pills"><span class="pill">Retail launch room</span><span class="pill">Try-on proof</span><span class="pill">Recovery receipts</span></div>
+    </div>
+    <div class="layout">
+      <main>
+        <h1 class="headline">Launch a try-on journey that does not vanish when AI breaks.</h1>
+        <p class="sub">MirrorRun pairs a shopper-facing retail mirror with the proof room behind it: try-on media, Nemotron planning, resilience events, and replayable QA workflows.</p>
+        <div class="button-row"><div class="btn">Start launch session</div><div class="btn secondary">View proof receipt</div></div>
+        <div class="stat-grid">
+          <div class="stat"><strong>4</strong> sponsor-grade backbones</div>
+          <div class="stat"><strong>1</strong> visible shopper path</div>
+          <div class="stat"><strong>0</strong> blank failure states</div>
+          <div class="stat"><strong>90s</strong> hero demo</div>
+        </div>
+      </main>
+      <aside class="panel mirror">
+        <div><div class="label">Before</div><div class="photo"></div></div>
+        <div><div class="label">Recovered result</div><div class="photo"></div></div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="mockup overview screen">
+    <div class="topbar">
+      <div class="brand"><div class="mark"></div><span>MirrorRun Control Room</span></div>
+      <div class="pills"><span class="pill">Session MR-042</span><span class="pill">Recovered</span></div>
+    </div>
+    <div class="app-grid">
+      <section class="panel mirror">
+        <div><div class="label">Shopper upload</div><div class="photo"></div></div>
+        <div><div class="label">Perfect result</div><div class="photo"></div></div>
+      </section>
+      <aside class="side-stack">
+        <div class="panel">
+          <div class="label">Provider health</div>
+          <div class="health"><div>Crusoe Nemotron</div><div class="bar"><span style="width: 96%"></span></div><div>Perfect API</div><div class="bar"><span style="width: 88%"></span></div><div>Lark workflow</div><div class="bar"><span style="width: 74%"></span></div><div>MCP tool server</div><div class="bar coral"><span style="width: 38%"></span></div></div>
+        </div>
+        <div class="panel">
+          <div class="label">Agent trace</div>
+          <div class="timeline">
+            <div class="event"><span class="dot"></span><span>Style brief parsed</span><b>0.8s</b></div>
+            <div class="event"><span class="dot"></span><span>Try-on result attached</span><b>4.2s</b></div>
+            <div class="event"><span class="dot fail"></span><span>MCP server error</span><b>5.1s</b></div>
+            <div class="event"><span class="dot"></span><span>Fallback receipt written</span><b>6.0s</b></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="mockup detail screen">
+    <div class="topbar">
+      <div class="brand"><div class="mark"></div><span>Proof Receipt</span></div>
+      <div class="pills"><span class="pill">Lark WF-7A19</span><span class="pill">Gateway event TF-219</span><span class="pill">Session MR-042</span></div>
+    </div>
+    <div class="receipt">
+      <section class="panel">
+        <div class="label">Timeline</div>
+        <div class="timeline">
+          <div class="event"><span class="dot"></span><span>Image uploaded to R2</span><b>stored</b></div>
+          <div class="event"><span class="dot"></span><span>Perfect result returned</span><b>real API</b></div>
+          <div class="event"><span class="dot warn"></span><span>Nemotron retries through gateway</span><b>policy</b></div>
+          <div class="event"><span class="dot"></span><span>Safe shopper card delivered</span><b>recovered</b></div>
+          <div class="event"><span class="dot"></span><span>Lark replay workflow created</span><b>WF-7A19</b></div>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="label">Replay command</div>
+        <div class="code">getlark workflows invoke --workflow-ids WF-7A19 --wait --timeout 300
+
+Artifacts:
+- shopper-result.png
+- gateway-event.json
+- operator-screenshot.png
+- recovery-log.txt</div>
+      </section>
+    </div>
+  </div>
+
+  <div class="mockup mobile screen">
+    <div class="phone-wrap">
+      <div class="brand"><div class="mark"></div><span>MirrorRun</span></div>
+      <h2 style="font-size: 34px; line-height: 1; margin: 28px 0 8px;">Try the launch look</h2>
+      <p style="color: var(--muted); font-weight: 700;">Upload a photo, choose a style brief, and keep the result even if the agent needs to recover.</p>
+      <div class="phone-hero"></div>
+      <div class="panel" style="box-shadow:none; padding:16px;">
+        <div class="label">Recovery proof</div>
+        <b>Ready</b> · shopper path has a saved fallback receipt.
+      </div>
+      <div class="sticky">Upload photo</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    document.body.dataset.screen = params.get("screen") || "landing";
+  </script>
+</body>
+</html>

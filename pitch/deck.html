@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MirrorRun Pitch Deck</title>
+    <style>
+      :root {
+        --ink: #181512;
+        --paper: #faf7f1;
+        --panel: #fffaf2;
+        --coral: #bd382f;
+        --mint: #2cbf8a;
+        --blue: #315f9f;
+        --amber: #f2b84b;
+        --muted: #62584f;
+        --line: #27211d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: #111;
+        color: var(--ink);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      .deck {
+        display: grid;
+        gap: 28px;
+        padding: 28px;
+      }
+
+      .slide {
+        position: relative;
+        width: 1920px;
+        height: 1200px;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(24, 21, 18, 0.045) 1px, transparent 1px) 0 0 / 64px 64px,
+          linear-gradient(0deg, rgba(24, 21, 18, 0.035) 1px, transparent 1px) 0 0 / 64px 64px,
+          var(--paper);
+      }
+
+      .slide::after {
+        content: "";
+        position: absolute;
+        inset: auto 70px 52px 70px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--coral), var(--mint), var(--blue));
+      }
+
+      .brand {
+        position: absolute;
+        top: 58px;
+        left: 72px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 28px;
+        font-weight: 950;
+      }
+
+      .brand img {
+        width: 54px;
+        height: 54px;
+      }
+
+      .eyebrow {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-size: 20px;
+        font-weight: 950;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        max-width: 920px;
+        font-size: 108px;
+        font-weight: 950;
+        letter-spacing: 0;
+        line-height: 1;
+      }
+
+      h2 {
+        font-size: 88px;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .lede {
+        max-width: 760px;
+        margin-top: 30px;
+        color: #342e29;
+        font-size: 34px;
+        line-height: 1.28;
+      }
+
+      .stage {
+        position: absolute;
+        inset: 155px 80px 95px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 64px;
+        align-items: center;
+        height: 100%;
+      }
+
+      .image-card,
+      .proof-card,
+      .demo-frame {
+        border: 4px solid var(--line);
+        border-radius: 16px;
+        background: var(--panel);
+        box-shadow: 14px 14px 0 var(--line);
+      }
+
+      .image-card {
+        overflow: hidden;
+      }
+
+      .image-card img,
+      .demo-frame img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-illustration {
+        height: 680px;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 54px;
+        align-items: stretch;
+        height: 100%;
+      }
+
+      .table-card {
+        align-self: center;
+        padding: 36px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 26px;
+        line-height: 1.25;
+      }
+
+      th,
+      td {
+        border-bottom: 3px solid rgba(39, 33, 29, 0.14);
+        padding: 24px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 17px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .demo-frame {
+        height: 780px;
+        overflow: hidden;
+      }
+
+      .demo-frame.contain {
+        height: 610px;
+        background: #181512;
+      }
+
+      .demo-frame.contain img {
+        object-fit: contain;
+        background: #181512;
+      }
+
+      .caption {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        margin-top: 26px;
+        border: 3px solid var(--line);
+        border-radius: 999px;
+        background: #181512;
+        color: #fff8ec;
+        font-size: 24px;
+        font-weight: 900;
+        padding: 18px 26px;
+        width: fit-content;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+        margin-top: 38px;
+      }
+
+      .node {
+        min-height: 180px;
+        border: 4px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 10px 10px 0 var(--line);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 950;
+      }
+
+      .proof-card {
+        padding: 44px;
+      }
+
+      .ask-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.95fr;
+        gap: 54px;
+        align-items: center;
+        height: 100%;
+      }
+
+      .link-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 34px;
+      }
+
+      .pill {
+        border: 3px solid var(--line);
+        border-radius: 999px;
+        background: var(--panel);
+        box-shadow: 5px 5px 0 rgba(39, 33, 29, 0.28);
+        color: var(--ink);
+        font-size: 22px;
+        font-weight: 950;
+        padding: 14px 20px;
+      }
+
+      .slide-no {
+        position: absolute;
+        right: 72px;
+        bottom: 68px;
+        color: var(--muted);
+        font-size: 20px;
+        font-weight: 950;
+      }
+
+      @media print {
+        body {
+          background: white;
+        }
+
+        .deck {
+          display: block;
+          padding: 0;
+        }
+
+        .slide {
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="deck">
+      <section class="slide" id="slide-01">
+        <div class="brand"><img src="../public/brand/logomark.svg" alt="" /> MirrorRun</div>
+        <div class="stage two-col">
+          <div>
+            <p class="eyebrow">AI retail launch room</p>
+            <h1>Retail try-on needs a launch receipt.</h1>
+            <p class="lede">Launch the shopper path, then prove what happens when the AI stack breaks.</p>
+            <div class="link-row">
+              <span class="pill">QR shopper path</span>
+              <span class="pill">Agent trace</span>
+              <span class="pill">Recovery proof</span>
+            </div>
+          </div>
+          <div class="image-card hero-illustration">
+            <img src="./illustrations/hero-retail-control-room.png" alt="" />
+          </div>
+        </div>
+        <div class="slide-no">01</div>
+      </section>
+
+      <section class="slide" id="slide-02">
+        <div class="brand"><img src="../public/brand/logomark.svg" alt="" /> MirrorRun</div>
+        <div class="stage problem-grid">
+          <div>
+            <p class="eyebrow">The trade-off</p>
+            <h2>Pretty demos hide launch risk.</h2>
+            <p class="lede">A final image is not enough when QA has to replay the exact journey after a provider failure.</p>
+          </div>
+          <div class="proof-card table-card">
+            <table>
+              <thead>
+                <tr><th>Current path</th><th>What breaks</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Static try-on prototype</td><td>No proof that recovery works under provider trouble.</td></tr>
+                <tr><td>Separate ops dashboard</td><td>Misses the consumer path judges and shoppers touch.</td></tr>
+                <tr><td>Bug report in chat</td><td>Cannot replay the exact image, prompt, and fault chain.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="slide-no">02</div>
+      </section>
+
+      <section class="slide" id="slide-03">
+        <div class="brand"><img src="../public/brand/logomark.svg" alt="" /> MirrorRun</div>
+        <div class="stage">
+          <p class="eyebrow">Live demo</p>
+          <h2>Try-on, fault, recovery, replay.</h2>
+          <div class="demo-frame contain" style="margin-top: 34px;">
+            <img src="../docs/screenshots/flow.png" alt="" />
+          </div>
+          <p class="caption">Start a session -> attach result -> stream trace -> record proof.</p>
+        </div>
+        <div class="slide-no">03</div>
+      </section>
+
+      <section class="slide" id="slide-04">
+        <div class="brand"><img src="../public/brand/logomark.svg" alt="" /> MirrorRun</div>
+        <div class="stage">
+          <p class="eyebrow">How it works</p>
+          <h2>Sponsor APIs become evidence.</h2>
+          <div class="flow">
+            <div class="node">Perfect Corp<br />try-on result</div>
+            <div class="node">Crusoe<br />Nemotron plan</div>
+            <div class="node">TrueFoundry<br />recovery event</div>
+            <div class="node">Lark<br />replay workflow</div>
+          </div>
+          <div class="image-card" style="height: 430px; margin-top: 44px;">
+            <img src="./illustrations/slide-04-sponsor-architecture.png" alt="" />
+          </div>
+        </div>
+        <div class="slide-no">04</div>
+      </section>
+
+      <section class="slide" id="slide-05">
+        <div class="brand"><img src="../public/brand/logomark.svg" alt="" /> MirrorRun</div>
+        <div class="stage ask-grid">
+          <div>
+            <p class="eyebrow">Proof + ask</p>
+            <h2>Inspect the receipt.</h2>
+            <div class="proof-card" style="margin-top: 42px;">
+              <table>
+                <thead>
+                  <tr><th>Action</th><th>Evidence</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Create session</td><td>Session id and timeline row</td></tr>
+                  <tr><td>Open phone path</td><td>QR/mobile first-run route</td></tr>
+                  <tr><td>Run sponsor calls</td><td>Job id, request id, workflow id, or credential blocker</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="caption">Looking for 3 retail teams to test launch receipts.</p>
+          </div>
+          <div class="image-card hero-illustration">
+            <img src="./illustrations/slide-05-business-close.png" alt="" />
+          </div>
+        </div>
+        <div class="slide-no">05</div>
+      </section>
+    </main>
+  </body>
+</html>

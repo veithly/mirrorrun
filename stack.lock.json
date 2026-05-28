@@ -1,0 +1,239 @@
+{
+  "$schema": "https://hackathonhunter.example.com/schemas/stack.lock.json",
+  "branch": "AI",
+  "hackathon": {
+    "name": "DevNetwork [AI + ML] Hackathon 2026",
+    "url": "https://devnetwork-ai-ml-hack-2026.devpost.com/",
+    "deadline": "2026-05-28T10:00:00-07:00"
+  },
+  "delivery_mode": "combined-pitch-demo",
+  "delivery_mode_reason": "Published Devpost instructions list a video demo field and do not list a separate slide-deck field.",
+  "video_target_duration_s": 270,
+  "video_resolution": "1920x1200",
+  "video_composer": "hyperframes",
+  "frontend": {
+    "framework": "next@latest",
+    "styling": "tailwind@latest",
+    "dependency_policy": "Frontend deps install with @latest or unversioned targets unless a verified sponsor/runtime blocker is recorded.",
+    "visual_style_lane": "operational-dashboard + beauty-retail editorial",
+    "primary_ui_library": "Mantine or Radix Themes for dense operations UI",
+    "supporting_ui_library": "shadcn/ui primitives + Recharts/ECharts for traces",
+    "non_tailwind_visual_signature": "split retail mirror plus launch-control timeline; no generic SaaS card wall",
+    "component_blocks": [
+      "launch session shell",
+      "shopper mirror",
+      "agent trace timeline",
+      "provider health strip",
+      "replay receipt",
+      "mobile QR first-run"
+    ],
+    "hero_composition": "split-screen mirror/control-room cockpit",
+    "visual_differentiation_note": "Uses retail imagery and reliability receipts, avoiding generic purple AI dashboards.",
+    "forbidden_lookalikes": [
+      "chatbot landing page",
+      "static observability dashboard",
+      "beauty try-on toy with no proof surface",
+      "generic Tailwind dark SaaS"
+    ],
+    "qr_mobile_access": {
+      "entry": "QR code opens the live shopper URL directly on mobile.",
+      "mobile_primary_flow": "Upload photo, pick style brief, view recovered result in <= 2 taps after upload.",
+      "desktop_parity_plan": "Desktop keeps the full 16:10 mirror/control-room split with trace, fault controls, and replay proof.",
+      "viewports_to_test": [
+        "390x844",
+        "1920x1200"
+      ]
+    },
+    "asset_sources": {
+      "logo": "logo-generator skill output, 6+ variants required before build",
+      "avatars": "DiceBear lorelei or initials for operators; no emoji glyphs",
+      "generated_images": [
+        "UI mockups",
+        "deck illustrations",
+        "OG card"
+      ]
+    },
+    "motion": [
+      "subtle premium",
+      "editorial cuts for proof transitions"
+    ]
+  },
+  "domain": {
+    "name": "AI retail operations",
+    "professional_context": "Launch sessions, shopper journeys, try-on media, conversion risk, replay workflows, provider health, failover, and proof receipts.",
+    "required_integrations": [
+      "Perfect Corp YouCam API",
+      "Crusoe Managed Inference",
+      "TrueFoundry AI Gateway",
+      "Lark CLI or MCP"
+    ],
+    "real_backbones": [
+      "streaming AI",
+      "live sponsor API",
+      "persistent state",
+      "media pipeline",
+      "developer workflow replay"
+    ]
+  },
+  "ai": {
+    "primary_provider": "Crusoe Managed Inference",
+    "primary_model": "hack-crusoe/Nemotron-3-Nano-30B-A3B-FP8",
+    "official_model_fallback": "nvidia/Nemotron-3-Nano-30B-A3B",
+    "base_url": "https://api.inference.crusoecloud.com/v1",
+    "openai_compatible": true,
+    "agent_pattern": "Hermes/NemoClaw-style planning agent with tool calls for try-on, replay, and resilience receipt generation",
+    "resilience_layer": "TrueFoundry AI Gateway policy and fault telemetry when keys are provided"
+  },
+  "deploy": {
+    "frontend": "cloudflare-workers",
+    "backend": "cloudflare-workers",
+    "adapter": "@opennextjs/cloudflare",
+    "bindings": {
+      "d1": [
+        "MIRRORRUN_DB"
+      ],
+      "kv": [
+        "MIRRORRUN_STATUS"
+      ],
+      "r2": [
+        "NEXT_INC_CACHE_R2_BUCKET",
+        "MIRRORRUN_MEDIA"
+      ],
+      "queues": []
+    },
+    "production_url": "https://mirrorrun.veithly.workers.dev",
+    "smoke_tested_at": "2026-05-28T07:18:46.262Z",
+    "cloudflare_override_reason": ""
+  },
+  "required_env": [
+    {
+      "name": "CRUSOE_API_KEY",
+      "scope": "server",
+      "required_for": "Nemotron Hermes/NemoClaw planning agent",
+      "official_key_url": "https://console.crusoecloud.com/request-foundry",
+      "storage": ".dev.vars and Wrangler secret",
+      "status": "configured",
+      "note": "Configured with the official Devpost hackathon bearer after Crusoe console personal key creation required card setup."
+    },
+    {
+      "name": "CRUSOE_BASE_URL",
+      "scope": "server",
+      "required_for": "Crusoe Managed Inference endpoint",
+      "official_key_url": "https://docs.crusoecloud.com/managed-inference/overview/",
+      "storage": ".dev.vars",
+      "status": "configured"
+    },
+    {
+      "name": "CRUSOE_MODEL",
+      "scope": "server",
+      "required_for": "Hackathon Nemotron model selection",
+      "official_key_url": "https://devnetwork-ai-ml-hack-2026.devpost.com/details/sponsors",
+      "storage": ".dev.vars",
+      "status": "configured"
+    },
+    {
+      "name": "OPENAI_COMPATIBLE_CRUSOE_ENDPOINT",
+      "scope": "server",
+      "required": false,
+      "required_for": "Audit marker: Crusoe Managed Inference is OpenAI-compatible while MirrorRun keeps CRUSOE_API_KEY as the canonical secret",
+      "official_key_url": "https://docs.crusoecloud.com/managed-inference/overview/",
+      "storage": "not used directly; CRUSOE_API_KEY, CRUSOE_BASE_URL, and CRUSOE_MODEL are canonical",
+      "status": "not-required"
+    },
+    {
+      "name": "PERFECT_API_KEY",
+      "scope": "server",
+      "required_for": "Perfect Corp try-on or skin/look analysis",
+      "official_key_url": "https://yce.perfectcorp.com/api-console/en/redeem-code/",
+      "storage": ".dev.vars and Wrangler secret",
+      "status": "configured"
+    },
+    {
+      "name": "PERFECT_API_SECRET",
+      "scope": "server",
+      "required_for": "Perfect Corp authenticated API calls if required by selected endpoint",
+      "official_key_url": "https://www.perfectcorp.com/business/ai-apis/",
+      "storage": ".dev.vars and Wrangler secret",
+      "status": "configured"
+    },
+    {
+      "name": "TRUEFOUNDRY_API_KEY",
+      "scope": "server",
+      "required_for": "Gateway, resilience telemetry, and fallback policy",
+      "official_key_url": "https://www.truefoundry.com/docs/ai-gateway/intro-to-llm-gateway",
+      "storage": ".dev.vars and Wrangler secret",
+      "status": "configured"
+    },
+    {
+      "name": "GETLARK_API_KEY",
+      "scope": "server",
+      "required_for": "Create/invoke replay workflows through Lark CLI or MCP",
+      "official_key_url": "https://dashboard.getlark.ai/",
+      "storage": ".dev.vars, local CLI login, and Wrangler secret",
+      "status": "configured"
+    },
+    {
+      "name": "STEP_API_KEY",
+      "scope": "local-recording",
+      "required_for": "StepFun stepaudio-2.5-tts narration for the final combined pitch-demo video",
+      "official_key_url": "https://platform.stepfun.com/",
+      "storage": ".env.local for recording only; never browser-exposed",
+      "status": "configured"
+    }
+  ],
+  "real_data_sources": [
+    {
+      "id": "shopper-media",
+      "type": "media",
+      "source": "User-uploaded image stored in R2",
+      "service_url": "https://developers.cloudflare.com/r2/",
+      "evidence": "R2 object key and rendered before/after state"
+    },
+    {
+      "id": "perfect-result",
+      "type": "api",
+      "source": "Perfect Corp YouCam API",
+      "service_url": "https://yce-api-01.perfectcorp.com",
+      "evidence": "API job id/result image or explicit provider error receipt from the official endpoint"
+    },
+    {
+      "id": "crusoe-agent-trace",
+      "type": "api",
+      "source": "Crusoe Managed Inference chat completions",
+      "service_url": "https://api.inference.crusoecloud.com/v1",
+      "evidence": "streamed agent trace and model receipt"
+    },
+    {
+      "id": "lark-replay",
+      "type": "collaboration",
+      "source": "Lark workflow id/execution id",
+      "service_url": "https://dashboard.getlark.ai/",
+      "evidence": "workflow link, CLI output, screenshot/log artifact"
+    },
+    {
+      "id": "truefoundry-resilience",
+      "type": "api",
+      "source": "TrueFoundry AI Gateway event or policy response",
+      "service_url": "https://www.truefoundry.com/docs/ai-gateway/intro-to-llm-gateway",
+      "evidence": "gateway request id, fallback event, or explicit provider error receipt"
+    },
+    {
+      "id": "session-proof",
+      "type": "storage",
+      "source": "Cloudflare D1 session and event tables",
+      "service_url": "https://developers.cloudflare.com/d1/",
+      "evidence": "session id, timeline rows, deploy URL"
+    }
+  ],
+  "prd_coverage": {
+    "source": "pitch/project_prd.md",
+    "minimum": "every P0/P1 REQ-### row has route/API/real-data/test/deploy evidence before recording"
+  },
+  "extras": {
+    "auth": "single admin token for hackathon operator mode; no full auth in MVP",
+    "db": "Cloudflare D1",
+    "analytics": null,
+    "errorTracking": null
+  },
+  "notes": "If any sponsor key is not available before implementation, the integration must show an honest blocker and must not fake receipts. If StepFun is unavailable, do not ship a robotic fallback voice as the final combined pitch-demo."
+}

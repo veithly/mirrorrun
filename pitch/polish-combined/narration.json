@@ -1,0 +1,48 @@
+{
+  "voice": "stepfun:stepaudio-2.5-tts:cixingnansheng",
+  "instruction": "Confident, calm hackathon narration. Native English pronunciation for MirrorRun, Crusoe, Nemotron, TrueFoundry, Perfect Corp, and Lark. Speak at about 150 words per minute.",
+  "status": "pitch-narration-rendered",
+  "chapters": [
+    {
+      "id": "pitch-01-hook",
+      "text": "A try-on demo can look polished and still fail the first shopper on launch day. MirrorRun records the launch path and the recovery proof in one receipt.",
+      "out": "assets/pitch-narration-01-hook.mp3",
+      "audio_path": "assets/pitch-narration-01-hook.mp3",
+      "generated": true,
+      "bytes": 174248
+    },
+    {
+      "id": "pitch-02-tradeoff",
+      "text": "The usual choices split the story. The shopper sees an image, operations sees a dashboard, and QA sees a chat thread. MirrorRun keeps the image, trace, fault, and replay together.",
+      "out": "assets/pitch-narration-02-tradeoff.mp3",
+      "audio_path": "assets/pitch-narration-02-tradeoff.mp3",
+      "generated": true,
+      "bytes": 223402
+    },
+    {
+      "id": "pitch-03-demo-bridge",
+      "text": "Here is the launch room. We create the session, open the mobile path, run the sponsor adapters, and keep every result or blocker visible.",
+      "out": "assets/pitch-narration-03-demo-bridge.mp3",
+      "audio_path": "assets/pitch-narration-03-demo-bridge.mp3",
+      "generated": true,
+      "bytes": 146598
+    },
+    {
+      "id": "pitch-05-howit",
+      "text": "Perfect Corp owns the consumer result. Crusoe and Nemotron write the launch plan. TrueFoundry records resilience behavior. Lark turns the session into a replay workflow.",
+      "out": "assets/pitch-narration-05-howit.mp3",
+      "audio_path": "assets/pitch-narration-05-howit.mp3",
+      "generated": true,
+      "bytes": 208808
+    },
+    {
+      "id": "pitch-06-ask",
+      "text": "Inspect the receipt, try the phone path, and use the same run to replace blockers with real provider evidence after the keys are installed.",
+      "out": "assets/pitch-narration-06-ask.mp3",
+      "audio_path": "assets/pitch-narration-06-ask.mp3",
+      "generated": true,
+      "bytes": 137000
+    }
+  ],
+  "model": "stepaudio-2.5-tts"
+}

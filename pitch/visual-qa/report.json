@@ -1,0 +1,125 @@
+{
+  "projectRoot": "C:\\Users\\Ricky\\Documents\\Project\\HackathonHunter\\devnetwork-ai-ml-2026",
+  "baseUrl": "http://127.0.0.1:3100",
+  "routes": [
+    "/",
+    "/app",
+    "/about",
+    "/app/replays"
+  ],
+  "viewports": [
+    "desktop",
+    "mobile"
+  ],
+  "generatedAt": "2026-05-28T05:35:15.596Z",
+  "scans": [
+    {
+      "page": {
+        "url": "http://127.0.0.1:3100/",
+        "title": "MirrorRun",
+        "width": 1920,
+        "height": 1200,
+        "scrollWidth": 1920,
+        "scrollHeight": 1200
+      },
+      "issues": [],
+      "route": "/",
+      "viewport": "desktop"
+    },
+    {
+      "page": {
+        "url": "http://127.0.0.1:3100/app",
+        "title": "MirrorRun",
+        "width": 1920,
+        "height": 1200,
+        "scrollWidth": 1920,
+        "scrollHeight": 2189
+      },
+      "issues": [],
+      "route": "/app",
+      "viewport": "desktop"
+    },
+    {
+      "page": {
+        "url": "http://127.0.0.1:3100/about",
+        "title": "MirrorRun",
+        "width": 1920,
+        "height": 1200,
+        "scrollWidth": 1920,
+        "scrollHeight": 1485
+      },
+      "issues": [],
+      "route": "/about",
+      "viewport": "desktop"
+    },
+    {
+      "page": {
+        "url": "http://127.0.0.1:3100/app/replays",
+        "title": "MirrorRun",
+        "width": 1920,
+        "height": 1200,
+        "scrollWidth": 1920,
+        "scrollHeight": 4921
+      },
+      "issues": [],
+      "route": "/app/replays",
+      "viewport": "desktop"
+    },
+    {
+      "page": {
+        "url": "http://127.0.0.1:3100/",
+        "title": "MirrorRun",
+        "width": 393,
+        "height": 852,
+        "scrollWidth": 393,
+        "scrollHeight": 1771
+      },
+      "issues": [],
+      "route": "/",
+      "viewport": "mobile"
+    },
+    {
+      "page": {
+        "url": "http://127.0.0.1:3100/app",
+        "title": "MirrorRun",
+        "width": 393,
+        "height": 852,
+        "scrollWidth": 393,
+        "scrollHeight": 3710
+      },
+      "issues": [],
+      "route": "/app",
+      "viewport": "mobile"
+    },
+    {
+      "page": {
+        "url": "http://127.0.0.1:3100/about",
+        "title": "MirrorRun",
+        "width": 393,
+        "height": 852,
+        "scrollWidth": 393,
+        "scrollHeight": 2302
+      },
+      "issues": [],
+      "route": "/about",
+      "viewport": "mobile"
+    },
+    {
+      "page": {
+        "url": "http://127.0.0.1:3100/app/replays",
+        "title": "MirrorRun",
+        "width": 393,
+        "height": 852,
+        "scrollWidth": 393,
+        "scrollHeight": 6841
+      },
+      "issues": [],
+      "route": "/app/replays",
+      "viewport": "mobile"
+    }
+  ],
+  "summary": {
+    "error": 0,
+    "warn": 0
+  }
+}

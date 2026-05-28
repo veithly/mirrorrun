@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MirrorRun Combined Pitch-Demo</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #111;
+      }
+
+      [data-composition-id="root"] {
+        position: relative;
+        width: 1920px;
+        height: 1200px;
+        overflow: hidden;
+        background: #181512;
+        color: #fff8ec;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      .plate {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        opacity: 0;
+      }
+
+      .plate img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .plate.is-visible,
+      .plate:nth-child(1) {
+        opacity: 1;
+      }
+
+      .kenburns {
+        animation: slow-push 9s ease-in-out infinite alternate;
+        transform-origin: center;
+      }
+
+      .caption {
+        position: absolute;
+        top: 76px;
+        right: 76px;
+        max-width: 720px;
+        border: 3px solid #27211d;
+        border-radius: 14px;
+        background: rgba(24, 21, 18, 0.92);
+        box-shadow: 8px 8px 0 rgba(39, 33, 29, 0.45);
+        color: #fff8ec;
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1.2;
+        padding: 16px 22px;
+      }
+
+      .outro {
+        display: grid;
+        place-items: center;
+        gap: 28px;
+        background:
+          linear-gradient(90deg, rgba(255, 248, 236, 0.08) 1px, transparent 1px) 0 0 / 64px 64px,
+          linear-gradient(0deg, rgba(255, 248, 236, 0.06) 1px, transparent 1px) 0 0 / 64px 64px,
+          #181512;
+        text-align: center;
+      }
+
+      .outro h1 {
+        margin: 0;
+        font-size: 120px;
+        line-height: 1;
+      }
+
+      .outro p {
+        margin: 0;
+        max-width: 900px;
+        color: #fff8ec;
+        font-size: 36px;
+        line-height: 1.25;
+      }
+
+      @keyframes slow-push {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.035);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="root" data-start="0" data-width="1920" data-height="1200" data-duration="250">
+      <div id="clip-01-hero" class="plate is-visible" data-start="0" data-duration="30" data-track-index="0">
+        <img class="kenburns" src="../deck-thumbs/slide-01.png" alt="" />
+        <p class="caption">A retail try-on can look polished and still fail the first shopper.</p>
+      </div>
+      <div id="clip-02-tradeoff" class="plate" data-start="30" data-duration="35" data-track-index="0">
+        <img class="kenburns" src="../deck-thumbs/slide-02.png" alt="" />
+        <p class="caption">MirrorRun keeps the image, trace, fault, and replay together.</p>
+      </div>
+      <div id="clip-03-demo" class="plate" data-start="65" data-duration="110" data-track-index="0">
+        <img src="../../docs/screenshots/flow.png" alt="" />
+        <p class="caption">The current capture is honest: missing sponsor keys stay visible.</p>
+      </div>
+      <div id="clip-04-how" class="plate" data-start="175" data-duration="40" data-track-index="0">
+        <img class="kenburns" src="../deck-thumbs/slide-04.png" alt="" />
+        <p class="caption">Sponsor APIs become receipt evidence, not hidden plumbing.</p>
+      </div>
+      <div id="clip-05-ask" class="plate" data-start="215" data-duration="28" data-track-index="0">
+        <img class="kenburns" src="../deck-thumbs/slide-05.png" alt="" />
+        <p class="caption">Inspect the receipt, then replace blockers with live proof.</p>
+      </div>
+      <div id="clip-06-outro" class="plate outro" data-start="243" data-duration="7" data-track-index="0">
+        <div>
+          <h1>MirrorRun</h1>
+          <p>Try the shopper path. Inspect the receipt. Replace blockers with live sponsor proof.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines.root = { duration: () => 250 };
+    </script>
+  </body>
+</html>

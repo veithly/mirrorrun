@@ -1,0 +1,40 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mirrorrun",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-05-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+  "vars": {
+    "MIRRORRUN_STORAGE": "cloudflare",
+    "APP_BASE_URL": "https://mirrorrun.veithly.workers.dev",
+    "CRUSOE_BASE_URL": "https://api.inference.crusoecloud.com/v1",
+    "CRUSOE_MODEL": "hack-crusoe/Nemotron-3-Nano-30B-A3B-FP8"
+  },
+  "d1_databases": [
+    {
+      "binding": "MIRRORRUN_DB",
+      "database_name": "mirrorrun-db",
+      "database_id": "0a1a234d-b27f-4c7f-b839-5fe509f6895f"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "MIRRORRUN_STATUS",
+      "id": "7110b2b9bbf64d748515b79978a2b88a"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "mirrorrun-next-cache"
+    },
+    {
+      "binding": "MIRRORRUN_MEDIA",
+      "bucket_name": "mirrorrun-media"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MirrorRun logomark">
+  <rect x="10" y="8" width="34" height="42" rx="4" fill="#FFF8EC" stroke="#181512" stroke-width="4"/>
+  <rect x="17" y="15" width="34" height="42" rx="4" fill="#E45745" stroke="#181512" stroke-width="4"/>
+  <path d="M25 31h16" stroke="#FFF8EC" stroke-width="4" stroke-linecap="round"/>
+  <path d="M37 25l8 8-8 8" fill="none" stroke="#FFF8EC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 55h34" stroke="#181512" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="49" cy="15" r="5" fill="#2CBF8A" stroke="#181512" stroke-width="3"/>
+</svg>

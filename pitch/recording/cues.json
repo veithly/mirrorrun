@@ -1,0 +1,57 @@
+{
+  "schema": "mirrorrun.recording-cues.v1",
+  "baseURL": "http://localhost:3100",
+  "status": "honest-blocker-capture-until-sponsor-keys-are-installed",
+  "width": 1920,
+  "height": 1200,
+  "started_at": "2026-05-28T05:29:39.205Z",
+  "cues": [
+    {
+      "id": "01_landing",
+      "at_ms": 1722,
+      "url": "http://localhost:3100/"
+    },
+    {
+      "id": "02_launch_room",
+      "at_ms": 4543,
+      "url": "http://localhost:3100/app"
+    },
+    {
+      "id": "03_session_created",
+      "at_ms": 8548,
+      "sessionId": "MR-807-0B7D"
+    },
+    {
+      "id": "04_perfect_or_blocker",
+      "at_ms": 11009,
+      "sessionId": "MR-807-0B7D"
+    },
+    {
+      "id": "05_agent_or_blocker",
+      "at_ms": 12186,
+      "sessionId": "MR-807-0B7D"
+    },
+    {
+      "id": "06_recovery_event",
+      "at_ms": 13362,
+      "sessionId": "MR-807-0B7D"
+    },
+    {
+      "id": "07_lark_or_blocker",
+      "at_ms": 14552,
+      "sessionId": "MR-807-0B7D"
+    },
+    {
+      "id": "08_mobile_path",
+      "at_ms": 20457,
+      "sessionId": "MR-807-0B7D",
+      "url": "http://localhost:3100/m/MR-807-0B7D"
+    },
+    {
+      "id": "09_receipt_detail",
+      "at_ms": 26320,
+      "sessionId": "MR-807-0B7D",
+      "url": "http://localhost:3100/app/session/MR-807-0B7D"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+MIRRORRUN_STORAGE=cloudflare
+CRUSOE_API_KEY=
+CRUSOE_BASE_URL=https://api.inference.crusoecloud.com/v1
+CRUSOE_MODEL=hack-crusoe/Nemotron-3-Nano-30B-A3B-FP8
+PERFECT_API_KEY=
+PERFECT_API_SECRET=
+PERFECT_API_URL=
+TRUEFOUNDRY_API_KEY=
+TRUEFOUNDRY_GATEWAY_URL=
+GETLARK_API_KEY=
+GETLARK_API_URL=
+APP_BASE_URL=https://mirrorrun.example.workers.dev
+STEP_API_KEY=
+STEP_BASE_URL=https://api.stepfun.com/v1
+STEP_TTS_MODEL=stepaudio-2.5-tts
+STEP_TTS_VOICE=cixingnansheng
