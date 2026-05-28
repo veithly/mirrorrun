@@ -94,11 +94,11 @@ https://mirrorrun.veithly.workers.dev
 
 ## Repository URL
 
-TODO-PUBLIC-REPO-URL
+https://github.com/veithly/mirrorrun
 
 ## Documentation URL
 
-TODO-PUBLIC-REPO-URL/blob/main/docs/ARCHITECTURE.md
+https://github.com/veithly/mirrorrun/blob/main/docs/ARCHITECTURE.md
 
 ## Video URL
 
@@ -132,7 +132,6 @@ MirrorRun is built to avoid fake proof. If a sponsor account is not connected du
 
 ## Submit Blockers
 
-- Replace `TODO-PUBLIC-REPO-URL` after repo publication.
 - Replace `TODO-YOUTUBE-WATCH-URL` after final combined pitch-demo render and upload.
 - Replace `TODO-TEAM-MEMBERS`.
 - Run `npm run check:submission` and confirm it exits clean.

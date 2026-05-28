@@ -40,7 +40,6 @@ Current live evidence:
 - Crusoe Managed Inference smoke reached the official chat completions endpoint with the Devpost hackathon bearer.
 
 Remaining blockers:
-- Publish public GitHub repository and copy the final URL into `SUBMISSION.md`.
 - Render/export the final combined pitch-demo video and upload it as an unlisted YouTube video.
 - Confirm Devpost team member display names.
 - Fill and submit the Devpost form while logged in, after user confirmation on the final submit action.
